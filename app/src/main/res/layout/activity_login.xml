@@ -32,7 +32,7 @@
 
     <EditText
         android:inputType="textEmailAddress"
-        android:id="@+id/ed_username"
+        android:id="@+id/ed_email"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -58,7 +58,7 @@
         android:background="@drawable/ed_background"
         app:layout_constraintStart_toStartOf="@id/gui_left"
         app:layout_constraintEnd_toStartOf="@id/gui_right"
-        app:layout_constraintTop_toBottomOf="@id/ed_username"/>
+        app:layout_constraintTop_toBottomOf="@id/ed_email"/>
 
     <Button
         android:id="@+id/btn_signin"
@@ -123,6 +123,32 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="  SIGN UP"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@id/gui_left"
+        app:layout_constraintEnd_toStartOf="@id/gui_right"
+        app:layout_constraintTop_toBottomOf="@id/ly_signup">
+
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/img_google"
+            android:layout_width="50dp"
+
+            android:layout_height="25dp"/>
+
+
+
+<!--        <com.facebook.login.widget.LoginButton-->
+<!--            android:id="@+id/img_facebook"-->
+<!--            android:layout_width="50dp"-->
+<!--            android:layout_height="25dp"-->
+<!--            android:layout_marginLeft="30dp"-->
+<!--            android:paddingLeft="20dp"/>-->
 
     </LinearLayout>
 

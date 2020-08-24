@@ -81,7 +81,7 @@ public class SignUp extends AppCompatActivity {
                             if(vpassword.equals(password)){
 //                                user = new DashboardActivity(email, password);
                                 registerUser(email,password);
-                                startActivity(new Intent(SignUp.this, Login.class));
+//                                startActivity(new Intent(SignUp.this, Login.class));
                             }
                             else {
                                 Toast.makeText(SignUp.this,"Password not match",
@@ -124,6 +124,7 @@ public class SignUp extends AppCompatActivity {
     public void updateUI (FirebaseUser currentUser){
 //        String keyId = mDatabase.push().getKey();
 //        mDatabase.child(keyId).setValue(user);
+        Toast.makeText(getApplicationContext(),"Account has been created",Toast.LENGTH_SHORT).show();
         Intent loginIntent = new Intent(this,Login.class);
         startActivity(loginIntent);
     }

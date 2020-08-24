@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_login"
-    tools:context=".SwipeActivity">
+    tools:context=".SwipeActivity2">
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"
@@ -14,7 +14,14 @@
         android:clipToPadding="false"
         android:foregroundGravity="center"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent" >
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button" />
+    </androidx.viewpager.widget.ViewPager>
 
     <TextView
         android:id="@+id/btnOrder"
@@ -124,6 +131,13 @@
 
 
     </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/iconBawah"
+        android:text="add city"
+        android:id="@+id/add_btn"></Button>
 
 
 </RelativeLayout>
