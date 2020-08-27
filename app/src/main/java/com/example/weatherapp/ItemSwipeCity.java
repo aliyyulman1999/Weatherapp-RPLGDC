@@ -76,18 +76,10 @@ public class ItemSwipeCity extends Fragment {
 ////        text_pressure = (TextView)itemView.findViewById(R.id.text_pressure);
 //        text_speed = (TextView)itemView.findViewById(R.id.text_speed);
 //        text_humid = (TextView)itemView.findViewById(R.id.text_humid);
-        text_sunrise = (TextView)itemView.findViewById(R.id.text_sunrise);
+//        text_sunrise = (TextView)itemView.findViewById(R.id.text_sunrise);
 //        text_sunset = (TextView)itemView.findViewById(R.id.text_sunset);
-//        text_description = (TextView)itemView.findViewById(R.id.text_description);
+        text_description = (TextView)itemView.findViewById(R.id.text_description);
         text_date_time = (TextView)itemView.findViewById(R.id.text_date_time);
-//        add_botton =itemView.findViewById(R.id.btnAdd);
-//        add_botton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent search = new Intent(getContext(), SearchActivity.class);
-//                startActivityForResult(search, req_code);
-//            }
-//        });
 
         weather_panel = itemView.findViewById(R.id.weather_panel);
         getWeatherInformation(cityName);
@@ -147,19 +139,15 @@ public class ItemSwipeCity extends Fragment {
 //                                text_pressure.setText(new StringBuilder(String.valueOf(weatherResult.getMain().getPressure())).append("hpa").toString());
 
 //                                text_deg.setText(new StringBuilder(String.valueOf(weatherResult.getWind().getDeg())).append("deg").toString());
-                        text_sunrise.setText(new StringBuilder(Common.convertUnixToDateHour(weatherResult.getSys().getSunrise())).append(" LT"));
+//                        text_sunrise.setText(new StringBuilder(Common.convertUnixToDateHour(weatherResult.getSys().getSunrise())).append(" LT"));
 //                                text_sunset.setText(new StringBuilder(Common.convertUnixToDateHour(weatherResult.getSys().getSunset())).append(" LT"));
-//                                text_description.setText(new StringBuilder(String.valueOf(weatherResult.getWeather().get(0).getDescription())));
+                        text_description.setText(new StringBuilder(String.valueOf(weatherResult.getWeather().get(0).getDescription())));
                         text_date_time.setText(new StringBuilder(Common.convertUnixToDateDay(weatherResult.getDt())));
 
 //                      display panel
                         weather_panel.setVisibility(View.VISIBLE);
                     }
                 }));
-    }
-
-    void setCityName(String cityName){
-        this.cityName = cityName;
     }
 
     @Override

@@ -1,5 +1,7 @@
 package com.example.weatherapp;
 
+import android.content.Intent;
+import android.net.wifi.p2p.WifiP2pManager;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,7 +9,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsoluteLayout;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,6 +20,7 @@ import com.example.weatherapp.common.Common;
 import com.example.weatherapp.model.WeatherResult;
 import com.example.weatherapp.retrofit.IOpenWeatherMap;
 import com.example.weatherapp.retrofit.RetrofitClient;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;

@@ -1,56 +1,48 @@
-//package com.example.weatherapp;
-//
-//import androidx.annotation.NonNull;
-//import androidx.appcompat.app.AppCompatActivity;
-//
-//import android.content.Intent;
-//import android.os.Bundle;
-//import android.util.Log;
-//import android.view.View;
-//import android.widget.Button;
-//import android.widget.EditText;
-//import android.widget.ImageView;
-//import android.widget.TextView;
-//import android.widget.Toast;
-//
-//import com.google.android.gms.tasks.OnCompleteListener;
-//import com.google.android.gms.tasks.Task;
-//import com.google.firebase.auth.AuthCredential;
-//import com.google.firebase.auth.EmailAuthProvider;
-//import com.google.firebase.auth.FirebaseAuth;
-//import com.google.firebase.auth.FirebaseUser;
-//import com.google.firebase.database.DatabaseReference;
-//import com.google.firebase.database.FirebaseDatabase;
-//import com.google.firebase.storage.FirebaseStorage;
-//import com.google.firebase.storage.StorageReference;
-//
-//public class UpdateProfile extends AppCompatActivity {
-//
-////    private static final String TAG = EditProfileActivity.class.getSimpleName();
-//    Button btnsave;
-//    FirebaseUser user;
-//    private FirebaseAuth firebaseAuth;
-//    private TextView textViewemailname;
-//    private DatabaseReference databaseReference;
-//    private EditText editTextEmail;
-//    private EditText editTextPass;
-//    private EditText editTextVPass;
-////    private FirebaseStorage firebaseStorage;
-//    private static int PICK_IMAGE = 123;
-////    Uri imagePath;
-////    private StorageReference storageReference;
-//
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_profile);
-//
+package com.example.weatherapp;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
+import com.google.firebase.auth.EmailAuthProvider;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+public class ProfilUpdate extends AppCompatActivity {
+    Button btnsave;
+    FirebaseUser user;
+    private FirebaseAuth firebaseAuth;
+    private TextView textViewemailname;
+    private DatabaseReference databaseReference;
+    private EditText editTextEmail;
+    private EditText editTextPass;
+    private EditText editTextVPass;
+    private static int PICK_IMAGE = 123;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_profil_update);
+
 //        firebaseAuth = FirebaseAuth.getInstance();
 //        user = FirebaseAuth.getInstance().getCurrentUser();
 //        if (firebaseAuth.getCurrentUser() == null){
 //            finish();
 //            startActivity(new Intent(getApplicationContext(),Login.class));
-//        }
+    }
 //        databaseReference = FirebaseDatabase.getInstance().getReference();
 //        editTextEmail = (EditText)findViewById(R.id.text_email);
 //        editTextPass = (EditText)findViewById(R.id.text_password);
@@ -159,4 +151,5 @@
 //        startActivity(new Intent(getApplicationContext(),Login.class));
 //        Log.d("signout", "User sign out.");
 //    }
-//}
+
+}

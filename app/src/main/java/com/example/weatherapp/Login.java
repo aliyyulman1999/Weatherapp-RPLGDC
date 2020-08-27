@@ -56,7 +56,7 @@ public class Login extends AppCompatActivity {
         //initialise Firebase
         mAuth = FirebaseAuth.getInstance();
 
-        edEmail = (EditText) findViewById(R.id.ed_email);
+        edEmail = (EditText) findViewById(R.id.ed_username);
         edPassword = (EditText) findViewById(R.id.ed_password);
 
         signInGoogle = findViewById(R.id.img_google);
@@ -183,7 +183,7 @@ public class Login extends AppCompatActivity {
     }
     public void updateUI (FirebaseUser currentUser){
         String user = currentUser.getEmail();
-        Intent main = new Intent(Login.this,UpdateProfile.class);
+        Intent main = new Intent(Login.this,SwipeActivity2.class);
         startActivity(main);
         Toast.makeText(Login.this, "Welcome "+user, Toast.LENGTH_SHORT).show();
 

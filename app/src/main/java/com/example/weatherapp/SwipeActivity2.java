@@ -1,27 +1,22 @@
 package com.example.weatherapp;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.app.ActivityCompat;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
 import android.Manifest;
 import android.animation.ArgbEvaluator;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.location.Location;
 import android.os.Bundle;
 import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import com.example.weatherapp.adapter.viewPagerAdapter2;
 import com.example.weatherapp.common.Common;
@@ -30,7 +25,6 @@ import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 import com.karumi.dexter.Dexter;
@@ -43,7 +37,6 @@ import java.util.List;
 
 public class SwipeActivity2 extends AppCompatActivity {
 
-
     private ViewPager viewPager;
     private RelativeLayout relativeLayout;
     private Integer[] colors = null;
@@ -54,13 +47,11 @@ public class SwipeActivity2 extends AppCompatActivity {
     private ArgbEvaluator argbEvaluator = new ArgbEvaluator();
     private Button add_btn;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_activity_swipe);
         relativeLayout = (RelativeLayout) findViewById(R.id.root_view);
-
         add_btn = (Button)findViewById(R.id.add_btn);
         add_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,7 +95,6 @@ public class SwipeActivity2 extends AppCompatActivity {
 //                getResources().getColor(R.color.color4)
         };
         colors = colors_temp;
-
     }
 
     @Override
@@ -179,19 +169,15 @@ public class SwipeActivity2 extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
         adapter = new viewPagerAdapter2(getSupportFragmentManager());
         adapter.addFragment(ItemSwipeToday.getInstance());
-//        adapter.addFragment(ItemSwipeCity.getInstance());
-//        addItemSwipe("helsinki");
+        addItemSwipe("Helsinki");
         viewPager.setAdapter(adapter);
         viewPager.setPadding(130,0,130,0);
 
     }
 
     private void addItemSwipe(String cityName){
-
         adapter.addFragment(ItemSwipeCity.getInstance(cityName));
         adapter.notifyDataSetChanged();
-//        viewPager.setAdapter(adapter);
-//        viewPager.setPadding(130,0,130,0);
     }
 
     private void buildLocationRequest() {
@@ -202,27 +188,4 @@ public class SwipeActivity2 extends AppCompatActivity {
         locationRequest.setSmallestDisplacement(10.0f);
 
     }
-
-//    @Override
-//    protected void onResume() {
-//        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-//            // TODO: Consider calling
-//            //    ActivityCompat#requestPermissions
-//            // here to request the missing permissions, and then overriding
-//            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-//            //                                          int[] grantResults)
-//            // to handle the case where the user grants the permission. See the documentation
-//            // for ActivityCompat#requestPermissions for more details.
-//            super.onResume();
-//            buildLocationRequest();
-//            startLocationUpdates();
-//        }
-//
-//    }
-
-//    private void startLocationUpdates() {
-//        mFusedLocationClient.requestLocationUpdates(locationRequest,
-//                locationCallback,
-//                Looper.getMainLooper());
-//    }
 }
