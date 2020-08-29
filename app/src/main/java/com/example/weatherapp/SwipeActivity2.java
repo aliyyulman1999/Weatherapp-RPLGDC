@@ -24,7 +24,6 @@ import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
 
 import java.util.List;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -33,7 +32,6 @@ import androidx.viewpager.widget.ViewPager;
 public class SwipeActivity2 extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
-
     private ViewPager viewPager;
     private RelativeLayout relativeLayout;
     private Integer[] colors = null;
@@ -42,7 +40,6 @@ public class SwipeActivity2 extends AppCompatActivity {
     private LocationRequest locationRequest;
     private viewPagerAdapter2 adapter;
     private ArgbEvaluator argbEvaluator = new ArgbEvaluator();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,7 +85,6 @@ public class SwipeActivity2 extends AppCompatActivity {
         };
         colors = colors_temp;
 
-
     }
 
     public void ClickMenu (View view){
@@ -99,17 +95,14 @@ public class SwipeActivity2 extends AppCompatActivity {
     public void ClickLogo(View view){
         MenuActivity.closeDrawer(drawerLayout);
     }
-
-
-
     private void buildLocationCallBack() {
         locationCallback = new LocationCallback(){
             @Override
             public void onLocationResult(LocationResult locationResult){
                 super.onLocationResult(locationResult);
-
                 Common.current_location = locationResult.getLastLocation();
                 viewPager = (ViewPager)findViewById(R.id.viewPager);
+                viewPager.setOffscreenPageLimit(5);
                 setupViewPager(viewPager);
                 viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
                     @Override
@@ -126,6 +119,7 @@ public class SwipeActivity2 extends AppCompatActivity {
 //                            viewPager.setBackgroundColor(colors[colors.length-1]);
 //
 //                        }
+
                     }
 
                     @Override
@@ -151,10 +145,15 @@ public class SwipeActivity2 extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
         adapter = new viewPagerAdapter2(getSupportFragmentManager());
         adapter.addFragment(ItemSwipeToday.getInstance());
-        adapter.addFragment(ItemSwipeTomorrow1.getInstance());
+        addItemSwipe("Helsinki");
         viewPager.setAdapter(adapter);
         viewPager.setPadding(130,0,130,0);
 
+    }
+
+    private void addItemSwipe(String cityName){
+        adapter.addFragment(ItemSwipeCity.getInstance(cityName));
+        adapter.notifyDataSetChanged();
     }
 
     private void buildLocationRequest() {

@@ -13,7 +13,6 @@ import com.example.weatherapp.common.Common;
 import com.example.weatherapp.model.WeatherResult;
 import com.example.weatherapp.retrofit.IOpenWeatherMap;
 import com.example.weatherapp.retrofit.RetrofitClient;
-
 import androidx.fragment.app.Fragment;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
@@ -71,24 +70,8 @@ public class ItemSwipeToday extends Fragment {
 //        text_sunset = (TextView)itemView.findViewById(R.id.text_sunset);
 //        text_description = (TextView)itemView.findViewById(R.id.text_description);
         text_date_time = (TextView)itemView.findViewById(R.id.text_date_time);
-        units_botton =itemView.findViewById(R.id.btnAdd);
-        units_botton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view)
-            {
-                if (units.equalsIgnoreCase("metric")){
-                    units = "imperial";
-                    units_botton.setText("Change Units To Metric");
-                }
-                else {
-                    units = "metric";
-                    units_botton.setText("Change Units To Imperial");
-                }
-                getWeatherInformation();
-            }});
-//
+      
         weather_panel = itemView.findViewById(R.id.weather_panel);
-//
         getWeatherInformation();
 
         return itemView;

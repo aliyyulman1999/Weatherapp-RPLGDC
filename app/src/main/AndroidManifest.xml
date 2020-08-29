@@ -20,7 +20,7 @@
         <activity android:name=".ProfilActivity" />
         <activity android:name=".SignUp" />
         <activity
-            android:name=".MainActivity"
+            android:name="SwipeActivity2"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".GuideActivity"

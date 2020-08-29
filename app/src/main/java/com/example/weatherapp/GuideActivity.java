@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import com.example.weatherapp.adapter.ExpandableListAdapter;
 import android.widget.ExpandableListView;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -27,6 +26,7 @@ public class GuideActivity extends AppCompatActivity {
         listAdapter = new ExpandableListAdapter(this,listDataHeader,listHash);
         listView.setAdapter(listAdapter);
     }
+  
     private void initData() {
         listDataHeader = new ArrayList<>();
         listHash = new HashMap<>();

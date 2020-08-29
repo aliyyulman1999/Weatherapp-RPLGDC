@@ -7,7 +7,7 @@
     app:cardCornerRadius="18dp"
     app:cardUseCompatPadding="true"
     >
-    
+
     <LinearLayout
         android:layout_margin="16dp"
         android:orientation="vertical"
