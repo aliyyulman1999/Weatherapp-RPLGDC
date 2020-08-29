@@ -3,10 +3,8 @@ package com.example.weatherapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.widget.ExpandableListView;
-
 import com.example.weatherapp.adapter.ExpandableListAdapter;
-
+import android.widget.ExpandableListView;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -17,6 +15,7 @@ public class GuideActivity extends AppCompatActivity {
     private ExpandableListAdapter listAdapter;
     private List<String> listDataHeader;
     private HashMap<String,List<String>> listHash;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +26,7 @@ public class GuideActivity extends AppCompatActivity {
         listAdapter = new ExpandableListAdapter(this,listDataHeader,listHash);
         listView.setAdapter(listAdapter);
     }
-
+  
     private void initData() {
         listDataHeader = new ArrayList<>();
         listHash = new HashMap<>();
@@ -38,29 +37,18 @@ public class GuideActivity extends AppCompatActivity {
         listDataHeader.add("Manage the Weather");
 
         List<String> edmtDev = new ArrayList<>();
-        edmtDev.add("1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. \n" +
+        edmtDev.add("Management accounts are usually prepared on a regular and consistent basis to ensure a business owner or management team are getting the most out of monitoring their efforts. There is no set rule for this but typically they're produced monthly, or quarterly.\n" +
                 "\n" +
-                "2.Suspendisse at augue tempus, efficitur ante quis, tincidunt magna\n" +
-                "\n" +
-                "3. Duis molestie viverra ex a pretium. Nunc quam metus, dapibus fringilla euismod");
+                "Remember your reports will be most efficient when tailored to your business. That means covering what's most important to you as the owner manager. The below infographic is designed to inform and get you thinking, it's not a definitive format. ");
 
         List<String> androidStudio = new ArrayList<>();
-        androidStudio.add("Expandable ListView");
-        androidStudio.add("Google Map");
-        androidStudio.add("Chat Application");
-        androidStudio.add("Firebase ");
+        androidStudio.add("This is where I would go hoping to find that [contact] information. It is misleading to have this page called Contact Us and then the content on the page is just more paragraphs. They don’t seem to be offering other methods of contact including social media, email, or a phone number. If I go to Contact Us, I’m already expecting the variety of methods of contact.");
 
         List<String> xamarin = new ArrayList<>();
-        xamarin.add("Xamarin Expandable ListView");
-        xamarin.add("Xamarin Google Map");
-        xamarin.add("Xamarin Chat Application");
-        xamarin.add("Xamarin Firebase ");
+        xamarin.add("Unit Setting: Selecting the Unit for Values. Select the unit of measurement for numeric values to be entered or displayed on the touch panel.");
 
         List<String> uwp = new ArrayList<>();
-        uwp.add("UWP Expandable ListView");
-        uwp.add("UWP Google Map");
-        uwp.add("UWP Chat Application");
-        uwp.add("UWP Firebase ");
+        uwp.add("Manage Weather Forecast. Providing a local hourly Manage weather forecast of rain, sun, wind, humidity and temperature.");
 
         listHash.put(listDataHeader.get(0),edmtDev);
         listHash.put(listDataHeader.get(1),androidStudio);

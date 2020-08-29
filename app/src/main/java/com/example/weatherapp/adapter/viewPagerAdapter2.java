@@ -1,5 +1,8 @@
 package com.example.weatherapp.adapter;
 
+
+import java.util.ArrayList;
+import java.util.List;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -29,9 +32,8 @@ public class viewPagerAdapter2 extends FragmentPagerAdapter {
     public int getCount() {
         return fragmentList.size();
     }
-
+  
     public void addFragment(Fragment fragment) {
         fragmentList.add(fragment);
-
     }
 }

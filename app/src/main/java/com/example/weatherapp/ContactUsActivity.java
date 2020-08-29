@@ -1,7 +1,6 @@
 package com.example.weatherapp;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.app.Activity;
@@ -22,29 +21,13 @@ public class ContactUsActivity extends AppCompatActivity {
     }
     public void ClickMenu (View view){
         //Open drawer
-        menuActivity.openDrawer(drawerLayout);
+        MenuActivity.openDrawer(drawerLayout);
     }
-
-//    private static void openDrawer(DrawerLayout drawerLayout) {
-//        //Open drawer layout
-//        drawerLayout.openDrawer(GravityCompat.START);
-//    }
-
     public void ClickLogo(View view){
-        menuActivity.closeDrawer(drawerLayout);
+        MenuActivity.closeDrawer(drawerLayout);
     }
-
-//    private static void closeDrawer(DrawerLayout drawerLayout) {
-//        //Close drawer layout
-//        //Close drawer
-//        if (drawerLayout.isDrawerOpen(GravityCompat.START)){
-//            //when drawer is open
-//            //close drawer
-//            drawerLayout.closeDrawer(GravityCompat.START);
-//        }
-//    }
     public void ClickUnit(View view){
-        menuActivity.redirectActivity(this,menuActivity.class);
+        MenuActivity.redirectActivity(this,MenuActivity.class);
 
     }
 
@@ -54,7 +37,7 @@ public class ContactUsActivity extends AppCompatActivity {
 
     public void ClickProfil(View view){
         //redirect activity to dashboard
-        menuActivity.redirectActivity(this, profil.class);
+        MenuActivity.redirectActivity(this, ProfilActivity.class);
     }
     public static void redirectActivity(Activity activity, Class aClass) {
         //Initialize intent
@@ -69,6 +52,7 @@ public class ContactUsActivity extends AppCompatActivity {
     protected void onPause(){
         super.onPause();;
         //Close drawer
-        menuActivity.closeDrawer(drawerLayout);
+        MenuActivity.closeDrawer(drawerLayout);
+
     }
 }
